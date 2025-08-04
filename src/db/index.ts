@@ -7,7 +7,7 @@ const connection = await mysql.createConnection({
   uri: process.env.DATABASE_URL as string,
 })
 
-const db = drizzle({
+export const db = drizzle({
   client: connection,
   schema,
   casing: 'snake_case',
