@@ -4,11 +4,12 @@ import mysql from 'mysql2/promise'
 import * as schema from '@/db/schema'
 
 const connection = await mysql.createConnection({
-  uri: process.env.DATABASE_URL as string,
+  uri: process.env.DATABASE_URL,
 })
 
 export const db = drizzle({
   client: connection,
   schema,
+  mode: 'default',
   casing: 'snake_case',
 })
