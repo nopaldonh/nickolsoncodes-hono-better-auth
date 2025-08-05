@@ -9,7 +9,7 @@ export const insertTodo = async (todo: NewTodo) => {
   return result
 }
 
-export const getTodoByUserId = async (userId: string) => {
+export const getTodosByUserId = async (userId: string) => {
   const todoList = await db
     .select()
     .from(todos)
