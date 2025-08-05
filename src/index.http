@@ -1,1 +1,35 @@
 http://localhost:3000
+
+###
+
+POST http://localhost:3000/api/auth/sign-in/email
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password123"
+}
+
+###
+
+POST http://localhost:3000/api/auth/sign-in/email
+Content-Type: application/json
+
+{
+  "email": "test2@test.com",
+  "password": "password123"
+}
+
+###
+
+POST http://localhost:3000/api/todos
+Content-Type: application/json
+
+{
+  "title": "Learn Better Auth",
+  "description": "Build hono app with better auth"
+}
+
+###
+
+GET http://localhost:3000/api/todos
