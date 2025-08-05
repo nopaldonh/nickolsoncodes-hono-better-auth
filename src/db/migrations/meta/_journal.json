@@ -8,6 +8,13 @@
       "when": 1754332044726,
       "tag": "0000_nifty_stone_men",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1754401420937,
+      "tag": "0001_rich_joystick",
+      "breakpoints": true
     }
   ]
 }

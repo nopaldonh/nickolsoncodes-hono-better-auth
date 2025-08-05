@@ -1,3 +1,4 @@
+import { sql } from 'drizzle-orm'
 import {
   mysqlTable,
   varchar,
@@ -65,4 +66,18 @@ export const verification = mysqlTable('verification', {
   updatedAt: timestamp('updated_at').$defaultFn(
     () => /* @__PURE__ */ new Date()
   ),
+})
+
+export const todos = mysqlTable('todos', {
+  id: varchar({ length: 36 })
+    .default(sql`UUID()`)
+    .primaryKey(),
+  userId: varchar({ length: 36 })
+    .notNull()
+    .references(() => user.id, { onDelete: 'cascade' }),
+  title: varchar({ length: 500 }).notNull(),
+  description: varchar({ length: 1000 }),
+  completed: boolean().default(false),
+  createdAt: timestamp().defaultNow(),
+  updatedAt: timestamp().defaultNow(),
 })
